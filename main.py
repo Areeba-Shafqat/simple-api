@@ -40,6 +40,13 @@ money_quotes=[
     "Money grows on the tree of persistence. – Japanese Proverb",
     ]
 
+@app.get("/")
+def read_root():
+    return {
+        "message": "Hello World, Go to /side_hustles or /money_quotes to get a random side hustle or money quote"
+    }
+
+
 @app.get("/side_hustles")
 def get_side_hustles(apiKey: str):
     """Returns a random side hustle idea"""
